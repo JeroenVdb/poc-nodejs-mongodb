@@ -15,3 +15,7 @@ mongo
 ```
 npm install supervisor -g
 ```
+
+#### Monk and Mongoose
+Monk = pretty simple querying
+Mongoose = Advanced querying, can collect referenced Doucments with one query (still multiple calls to MongoDB offcourse): http://mongoosejs.com/docs/populate.html
