@@ -6,15 +6,10 @@ npm start
 #### Start MongoDB
 ```
 // cd to mongodb dir
-mongod --dbpath c:\node\nodetest1\data
-
-mongo
+mongod --dbpath <path-to-app>\data
 ```
 
-#### Supervisor
-```
-npm install supervisor -g
-```
+## Notes
 
 #### Monk and Mongoose
 Monk = pretty simple querying
