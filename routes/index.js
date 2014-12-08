@@ -126,18 +126,14 @@ router.get('/member/:id/full', function(req, res) {
     var collection = db.get('members');
     collection.find({_id: req.params.id}, {}, function(e, docs){
     	var member = docs[0];
-        for (var i = 0; i < member.projects.length; i++) {
-        	console.log(member.projects[i]);
 
-        	var collection = db.get('projects');
-        	collection.find({_id: member.projects[i]}, {}, function(e, docs){
-        		console.log(docs[0].name);
-        		member.projects.push(docs[0].name);
-        	});
+    	var collection = db.get('projects');
+    	console.log(member.projects);
+    	collection.find({_id: { $in: member.projects } }, {}, function(e, docs){
+    		member.projects = docs;
+        	res.json(member);
+    	});
 
-
-        }
-        res.json(member);
     });
 });
 
